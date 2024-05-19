@@ -31,7 +31,7 @@ const Header = () => {
 return (
     <div>
     <div>
-        <div className='mt-10 flex justify-between h-16 items-center pt-1 w-full bg-white '>
+        <div className='pt-7 flex justify-between items-center w-full bg-white '>
             <Button className="bg-transparent text-black text-4xl hover:bg-transparent rounded-lg"><HiOutlineBars3CenterLeft /></Button>
             <h1 className='font-semibold tracking-widest text-4xl'>Snitch</h1>
             <div className='right mr-10 flex space-x-2 bg-transparent'>
@@ -53,7 +53,7 @@ return (
                 <Button className="bg-transparent text-black text-xl hover:bg-transparent rounded-lg"><IoBagOutline /></Button>
             </div>
         </div>
-        <hr className="border-t border-gray-300 mt-16 top-0" />
+        <hr className="border-t border-gray-300 mt-7 top-0" />
     </div>
     </div>
 );

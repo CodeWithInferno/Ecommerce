@@ -86,13 +86,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import './multirender/css/banner.css';
 
 const ImageWithLoading = dynamic(() => import('../components/ImageWithLoading'));
 
 const client = sanityClient({
   projectId: 'vn7zew35',
   dataset: 'production',
-  useCdn: false, // Enable if you want to use the CDN
+  useCdn: true, // Enable if you want to use the CDN
 });
 
 const builder = imageUrlBuilder(client);
@@ -120,9 +121,9 @@ export default function ImageGallery() {
 
 
   return (
-    <div className='bg-white text-black mt-0 h-96 bg-no-repeat overflow-hidden'>  
+    <div className='bg-white text-black mt-0 h-[700px] bg-no-repeat overflow-hidden'>  
       <Carousel className="relative h-full">
-        <CarouselPrevious className="absolute left-0 z-10" />
+        <CarouselPrevious className="absolute left-0 z-10 carousel-arrow carousel-arrow-left" />
         <CarouselContent className="w-full h-full">
           {images.map((image, index) => (
             <CarouselItem key={index} className="w-full h-full">
@@ -134,7 +135,7 @@ export default function ImageGallery() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselNext className="absolute right-0 z-10" />
+        <CarouselNext className="absolute right-0 z-10 carousel-arrow carousel-arrow-right" />
       </Carousel>
     </div>
   );

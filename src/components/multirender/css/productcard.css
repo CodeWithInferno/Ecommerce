@@ -1,0 +1,22 @@
+.hover-img {
+    position: relative;
+}
+
+.hover-img .img-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hover-img:hover .img-top {
+    opacity: 0;
+}
+
+
+.zoom-on-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+

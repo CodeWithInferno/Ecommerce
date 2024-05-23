@@ -37,16 +37,40 @@ export default {
         hotspot: true,
       },
     },
-    {
-      name: 'size',
-      title: 'Size',
-      type: 'string',
-    },
+
     {
       name: 'category',
       title: 'Category',
       type: 'reference',
       to: [{ type: 'category' }],
+    },
+    {
+      name: 'sizes',
+      title: 'Sizes',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'size' }] }],
+    },
+    {
+      name: 'offers',
+      title: 'Offers',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+            },
+            {
+              name: 'description',
+              title: 'Description',
+              type: 'string',
+            },
+          ],
+        },
+      ],
     },
   ],
   preview: {

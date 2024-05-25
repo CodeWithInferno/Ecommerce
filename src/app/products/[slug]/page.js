@@ -48,14 +48,14 @@ export default function ProductDetails({ params }) {
   const { slug } = params || {};
   const [data, setData] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
-
+    const [cartItems, setCartItems] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const addToCart = () => {
-    setCartItems([...cartItems, data]);
-    setIsOpen(false);
-  };
-
+    const addToCart = () => {
+      setCartItems([...cartItems, {...data, selectedSize}]);
+      setIsOpen(false);
+    };
   useEffect(() => {
     getData(slug).then((data) => {
       setData(data);
@@ -70,7 +70,7 @@ export default function ProductDetails({ params }) {
     <TopHero />
     <Header />
 
-    <div className="flex">
+    <div className="flex w-screen">
       <div>
         <ScrollArea className="h-full w-auto rounded-md p-4">
           <div className="flex flex-col space-y-4 ml-5 w-auto">
@@ -88,8 +88,9 @@ export default function ProductDetails({ params }) {
       </div>
       <img
         src={urlFor(selectedImage)}
-        className="w-96 h-auto object-cover ml-5 mt-10"
+        className="w-96 h-svh object-cover ml-5 mt-10"
         alt=""
+        style={{ transition: 'none' }} // Add this line
       />
       <div className="w-8/12 mr-2">
         <h1 className="ml-5 mt-10 font-light text-3xl">{data.title}</h1>

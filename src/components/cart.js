@@ -73,19 +73,20 @@ const Cart = ({ setIsOpen, cartItems }) => {
             <AiOutlineClose className="absolute top-2 mt-5 font-light right-2 cursor-pointer" onClick={handleClose} />
             <h1 className='text-left ml-5'>BAG</h1>
             <hr className="border-t border-gray-300 mx-5 mt-7 top-0" />
-            {cartItems && cartItems.length > 0 ? (
-                cartItems.map((item, index) => (
-                    <div key={index} className="flex items-center space-x-4 mt-5 ml-5">
+                    {cartItems && cartItems.length > 0 ? (
+                    cartItems.map((item, index) => (
+                        <div key={index} className="flex items-center space-x-4 mt-5 ml-5">
                         <img src={item.imageUrls[0]} alt={item.title} className="w-24 h-auto object-cover" />
                         <div>
                             <h2 className="font-mono text-xl">{item.title}</h2>
                             <p className="font-thin text-base">Rs. {item.price}</p>
+                            <p className="font-thin text-base">Size: {item.selectedSize}</p>
                         </div>
-                    </div>
-                ))
-            ) : (
-                <p className='font-thin text-base text-left ml-5 mt-5 '>Your cart is currently empty.</p>
-            )}
+                        </div>
+                    ))
+                    ) : (
+                    <p className='font-thin text-base text-left ml-5 mt-5 '>Your cart is currently empty.</p>
+                    )}
         </div>
     );
 };

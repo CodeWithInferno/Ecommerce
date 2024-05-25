@@ -93,7 +93,7 @@ const ImageWithLoading = dynamic(() => import('../components/ImageWithLoading'))
 const client = sanityClient({
   projectId: 'vn7zew35',
   dataset: 'production',
-  useCdn: true, // Enable if you want to use the CDN
+  useCdn: false, // Enable if you want to use the CDN
 });
 
 const builder = imageUrlBuilder(client);
@@ -124,7 +124,7 @@ export default function ImageGallery() {
     <div className='bg-white text-black mt-0 h-[700px] bg-no-repeat overflow-hidden'>  
       <Carousel className="relative h-full">
         <CarouselPrevious className="absolute left-0 z-10 carousel-arrow carousel-arrow-left" />
-        <CarouselContent className="w-full h-full">
+        <CarouselContent className="w-screen h-full">
           {images.map((image, index) => (
             <CarouselItem key={index} className="w-full h-full">
               <div className="relative w-full h-full">

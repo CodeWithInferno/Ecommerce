@@ -28,7 +28,7 @@ const Header = () => {
             <div>
                 <div className='pt-7 flex justify-between items-center w-full bg-white '>
                     <Button className="bg-transparent text-black text-4xl hover:bg-transparent rounded-lg"><HiOutlineBars3CenterLeft /></Button>
-                    <h1 className='font-semibold tracking-widest text-4xl'>SNITCH</h1>
+                    <h1 className='font-semibold tracking-widest text-4xl'>SAMPLE SHOP</h1>
                     <div className='right mr-10 flex space-x-2 bg-transparent'>
                         {user ? (
                             user.picture ? (
